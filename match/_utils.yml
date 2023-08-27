@@ -1,0 +1,94 @@
+name: utils
+parent: base
+
+matches:
+  - trigger: ";;sdate"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  - trigger: ";;ldate"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%B%e, %Y"
+
+  - trigger: ";;dts"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M"
+
+  - trigger: ";;tz"
+    replace: "  - trigger: \":$|$\"\n    replace: \"\"\n    word: false"
+
+  - trigger: ":toupper"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          #cmd: 'echo $0 | python -c "import sys; print(''''.join(sys.stdin).upper())"'
+          cmd: 'echo {$0:u}'
+
+  - trigger: ":tolower"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          #cmd: 'echo $0 | python -c "import sys; print(''''.join(sys.stdin).lower())"'
+          cmd: 'echo {$0:l}'
+
+  - trigger: ":totitle"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          #cmd: 'echo $0 | python -c "import sys; print(''''.join(sys.stdin).title())"'
+          cmd: 'echo {$0:c}'
+
+  - trigger: ":myip"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "ifconfig en0 | grep inet | grep -v inet6 | cut -d ' ' -f2"
+
+  - trigger: ":espanso"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "/usr/local/bin/.espanso/config/* ~/.espanso/match/*"
+
+  - trigger: ":cht"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: 'curl "https://cht.sh/$0?QT&style=bw"'
+
+  - trigger: ":vcht"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: 'curl "https://cht.sh/$0?qT&style=bw"'

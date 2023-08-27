@@ -1,0 +1,10 @@
+name: python
+parent: base
+
+matches:
+  - trigger: ";;pdb"
+    replace: "import pdb; pdb.set_trace()"
+    label: "Python - pdb set_trace"
+  - trigger: ";;cf"
+    replace: "```\n$|$\n```"
+    label: "Python - Comment code fence"

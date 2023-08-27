@@ -1,0 +1,3 @@
+# https://espanso.org/docs/configuration/app-specific-configurations/
+filter_exec: /Applications/Alacritty.app
+enable: false

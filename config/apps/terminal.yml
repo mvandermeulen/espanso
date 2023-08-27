@@ -1,0 +1,3 @@
+# https://espanso.org/docs/configuration/app-specific-configurations/
+filter_exec: /System/Applications/Utilities/Terminal.app
+enable: false
