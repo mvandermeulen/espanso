@@ -1,0 +1,12 @@
+name: emails
+parent: default
+
+matches:
+  - trigger: ";;vwe"
+    replace: "mark.vandermeulen@challenger.com.au"
+  - trigger: ";;ve"
+    replace: "mark@vdm.id.au"
+  - trigger: ";;vme"
+    replace: "mark@millof.com.au"
+  - trigger: ";;vge"
+    replace: "frupert52@gmail.com"
