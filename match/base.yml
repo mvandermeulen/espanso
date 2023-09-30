@@ -1,0 +1,3 @@
+matches:
+  - trigger: ";;faddress"
+    replace: "8/190 Lambeth Street, Picnic Point 2213"
