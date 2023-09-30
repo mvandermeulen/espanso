@@ -1,0 +1,8 @@
+name: phone
+parent: default
+
+matches:
+  - trigger: ";;phm"
+    replace: "0459312495"
+  - trigger: ";;phw"
+    replace: "02 "
