@@ -3,7 +3,7 @@ parent: default
 
 matches:
   - trigger: ";;vwe"
-    replace: "mark.vandermeulen@challenger.com.au"
+    replace: "mvandermeulen@challenger.com.au"
   - trigger: ";;ve"
     replace: "mark@vdm.id.au"
   - trigger: ";;vme"
